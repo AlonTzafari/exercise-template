@@ -15,7 +15,7 @@ function run() {
 }
 
 function first(arr, n = 1) {
-    if(n === null || n === 1) return arr[0];
+    if(n === null || typeof(n) !== "number") return arr[0];
     return arr.slice(0, n);
 }
  
@@ -29,7 +29,6 @@ function extractArgs (string) {
     } catch(err) {
         obj.argsCount = 0;
     }
-    if( typeof(obj.n) !== "number" ) obj.argsCount = 0;
     return obj;
 }
 //divide string to array and n
