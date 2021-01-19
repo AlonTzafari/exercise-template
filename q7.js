@@ -10,7 +10,7 @@ function run() {
         out = "not an array";
     }
     if ( Array.isArray(arr) ) {
-        out = sortArray(arr);
+        out = insertionSort(arr);
     }else {
         out = "not an array";
     }
@@ -18,20 +18,19 @@ function run() {
     output.innerText = out;
 }
 
-function sortArray (array) {
-    const sortedArray = [];
-    while(array.length > 0){
-        let minItem = array[0];
-        let minIndex = 0;
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] < minItem) {
-                minItem = array[i];
-                minIndex = i;
-            }
+
+function insertionSort(array) {
+    const sortedArray = array;
+    let i = 1;
+    while(i < sortedArray.length) {
+        let j = i - 1;
+        const item = sortedArray[i];
+        while (item < sortedArray[j] && j >= 0) {
+            sortedArray[j+1] = sortedArray[j];
+            j--;
         }
-        sortedArray.push(array.splice(minIndex, 1)[0]);
+        sortedArray[j+1] = item;
+        i++; 
     }
     return sortedArray;
 }
-
-console.log(sortArray([4,5,9,2,6,1]));

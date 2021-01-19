@@ -15,7 +15,7 @@ function run() {
 }
 
 function first(arr, n = 1) {
-    if(n === null || typeof(n) !== "number") return arr[0];
+    if(typeof(n) !== "number") return arr[0];
     return arr.slice(0, n);
 }
  
