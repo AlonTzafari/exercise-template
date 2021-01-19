@@ -6,7 +6,7 @@ function run() {
     const args = extractArgs(input);
     console.log (args);    
     if(args.argsCount === 0){
-        out = "Invalid Input"; 
+        out = "Invalid Input. Expected:\n array\nor \narray, number"; 
     } else {
         out = first(args.arr, args.n);
     }
